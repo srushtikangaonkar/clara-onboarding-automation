@@ -1,0 +1,49 @@
+{
+  "name": "Clara Onboarding Automation Pipeline (Mock Export)",
+  "nodes": [
+    {
+      "name": "File Trigger - Demo Transcript",
+      "type": "n8n-nodes-base.readBinaryFile",
+      "description": "Triggered when demo transcript is uploaded to transcripts/demo/"
+    },
+    {
+      "name": "Execute Script - Extract Demo",
+      "type": "n8n-nodes-base.executeCommand",
+      "command": "python scripts/extract_demo.py <demo_file_path>",
+      "description": "Generates v1 account memo and agent spec"
+    },
+    {
+      "name": "Check Matching Onboarding File",
+      "type": "n8n-nodes-base.if",
+      "description": "Checks if onboarding transcript exists with same filename"
+    },
+    {
+      "name": "Execute Script - Update Onboarding",
+      "type": "n8n-nodes-base.executeCommand",
+      "command": "python scripts/update_onboarding.py <account_id> <onboarding_file_path>",
+      "description": "Applies structured patch and generates v2 + changelog"
+    },
+    {
+      "name": "Store Outputs",
+      "type": "n8n-nodes-base.writeBinaryFile",
+      "description": "Stores account memo, agent spec, and changes.json into outputs/accounts/"
+    }
+  ],
+  "connections": {
+    "File Trigger - Demo Transcript": [
+      "Execute Script - Extract Demo"
+    ],
+    "Execute Script - Extract Demo": [
+      "Check Matching Onboarding File"
+    ],
+    "Check Matching Onboarding File": [
+      "Execute Script - Update Onboarding"
+    ],
+    "Execute Script - Update Onboarding": [
+      "Store Outputs"
+    ]
+  },
+  "meta": {
+    "note": "This is a mock export representing how the Python CLI orchestrator would be structured inside n8n. The current implementation uses run_pipeline.py for deterministic zero-cost local execution."
+  }
+}
