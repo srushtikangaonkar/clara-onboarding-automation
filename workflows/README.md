@@ -65,3 +65,16 @@ The orchestration layer is intentionally:
 
 Each script in `/scripts` acts as a modular workflow unit,
 making this pipeline easy to port into n8n or another workflow engine if needed.
+
+## n8n Export (Mock)
+
+The file `n8n_export_mock.json` represents how this pipeline would be structured
+inside n8n using:
+
+- File trigger node
+- Execute command nodes
+- Conditional check
+- Output storage
+
+The current implementation uses a deterministic CLI orchestrator
+(`run_pipeline.py`) to maintain zero-cost reproducibility.
