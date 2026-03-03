@@ -1,0 +1,16 @@
+# Virtual environment
+venv/
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Outputs (optional)
+# If you want reviewers to see outputs, DO NOT ignore outputs/
+# If you want clean repo, uncomment below:
+# outputs/
+
+# Logs
+*.log

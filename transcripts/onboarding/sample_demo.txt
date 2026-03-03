@@ -1,0 +1,4 @@
+We confirm business hours are Monday to Friday 8 AM to 5 PM CST.
+Emergency sprinkler leaks must be transferred directly to dispatch.
+If transfer fails after 60 seconds, dispatch must be notified immediately.
+We never create sprinkler jobs in ServiceTrade.

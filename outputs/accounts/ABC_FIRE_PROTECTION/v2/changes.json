@@ -1,0 +1,29 @@
+{
+  "type_changes": {
+    "root['business_hours']['timezone']": {
+      "old_type": "NoneType",
+      "new_type": "str",
+      "old_value": null,
+      "new_value": "CST"
+    },
+    "root['call_transfer_rules']": {
+      "old_type": "NoneType",
+      "new_type": "dict",
+      "old_value": null,
+      "new_value": {
+        "timeout_seconds": 60,
+        "retry_attempts": 1,
+        "failure_message": "Dispatch will be notified immediately."
+      }
+    }
+  },
+  "iterable_item_added": {
+    "root['emergency_routing_rules'][0]": {
+      "description": "Emergency sprinkler calls",
+      "transfer_to": "Dispatch",
+      "order": 1,
+      "fallback_action": "Notify dispatch manually"
+    },
+    "root['integration_constraints'][0]": "Never create sprinkler jobs in ServiceTrade"
+  }
+}

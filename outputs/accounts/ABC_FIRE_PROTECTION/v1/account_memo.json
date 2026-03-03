@@ -1,0 +1,28 @@
+{
+  "account_id": "ABC_FIRE_PROTECTION",
+  "company_name": "ABC Fire Protection",
+  "business_hours": {
+    "days": "Monday-Friday",
+    "start_time": "8 AM",
+    "end_time": "5 PM",
+    "timezone": null
+  },
+  "office_address": null,
+  "services_supported": [
+    "Sprinkler Services",
+    "Fire Alarm Services",
+    "Inspection Scheduling"
+  ],
+  "emergency_definition": [
+    "fire alarm triggered",
+    "sprinkler leak"
+  ],
+  "emergency_routing_rules": [],
+  "non_emergency_routing_rules": [],
+  "call_transfer_rules": null,
+  "integration_constraints": [],
+  "after_hours_flow_summary": null,
+  "office_hours_flow_summary": null,
+  "questions_or_unknowns": [],
+  "notes": null
+}
